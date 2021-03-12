@@ -1,0 +1,14 @@
+$theme-colors: (
+    "primary":#f4e9f1,
+    "secondary":#261725,
+    "couleur-perso":#f5f5f5,
+    "btn-color":#a466c3
+    "span-color": #ba36c1
+
+
+);
+
+
+$font-size-base: 0.8rem;
+
+@import "node_modules/bootstrap/scss/bootstrap"
