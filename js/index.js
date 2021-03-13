@@ -1,9 +1,7 @@
 /*---------- PAGE D ACCUEIL ----------*/
 
 /*----- CONSTANTES -----*/
-const fondPhotoOurson = document.getElementById('fond-photo-ourson');
-const picTeddy = document.createElement('img');
-fondPhotoOurson.appendChild(picTeddy);
+
 const catalogue = document.getElementById('catalogue');
 
 /*----- FUNCTIONS -----*/
@@ -103,7 +101,6 @@ function promiseGet() {
 promiseGet()
     .then(function(response) {
 
-        picTeddy.setAttribute('src', 'http://localhost:3000/images/teddy_5.jpg');
         for(let i = 0; i < response.length; i++) {
             const newSection = document.createElement('section');
             catalogue.appendChild(newSection);
