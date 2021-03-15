@@ -13,12 +13,15 @@ function insertImageUrl(section, image){
     const newImg = document.createElement("img");
     newFigure.appendChild(newImg);
     newImg.setAttribute("src", image);
-}
+    newImg.setAttribute("alt", "image camera");
+    newImg.className = "d-block m-auto w-100 rounded";
+ }
 
 function insertName(div, name){
     const newH3 = document.createElement("h3");
     div.appendChild(newH3);
     newH3.innerHTML = name;
+    newH3.className = "text-secondary font-weight-bold";
 }
 
 function insertId(div, id){
@@ -32,6 +35,7 @@ function insertId(div, id){
     const newP2 = document.createElement("p");
     newDiv2.appendChild(newP2);
     newP2.innerHTML = id;
+    newP2.className = "text-secondary font-weight-bold";
 }
 
 function insertColor(div){
@@ -52,6 +56,7 @@ function insertPrice(div3, price){
     const newP5 = document.createElement("p");
     newDiv4.appendChild(newP5);
     newP5.innerHTML = price;
+    newP5.className = "font-weight-bold";
 }
 function insertLienPerso(div3, idLien){
     const newDiv5 = document.createElement("div");
@@ -104,6 +109,7 @@ promiseGet()
             insertImageUrl(newSection, response[i].imageUrl);
             const newDiv1 = document.createElement("div");
             newSection.appendChild(newDiv1);
+            newSection.className = "mb-5 p-3 w-100 border border-secondary rounded";
             insertName(newDiv1, response[i].name);
             insertId(newDiv1, response[i]._id);
             insertColor(newDiv1);
