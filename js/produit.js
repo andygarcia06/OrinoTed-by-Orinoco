@@ -99,8 +99,12 @@ function insertButtonCart(section, teddy) {
     const buttonValid = document.createElement("button");
     divRate.appendChild(buttonValid);
     buttonValid.className = "btn btn-secondary d-block m-auto";
-    buttonValid.setAttribute('type', 'submit');
+    buttonValid.setAttribute("type", "submit");
     buttonValid.innerHTML = "Ajouter au Panier";
+    buttonValid.id = "buttonValid"
+    // const linkButtonValid = document.createElement("a");
+    // buttonValid.appendChild(linkButtonValid);
+    // buttonValid.setAttribute("href","")
 }
 
 
@@ -127,7 +131,7 @@ promiseGet()
 
         
         /////////// Evènement ///////////
-        const addCart = document.querySelector("button");
+        const addCart = document.querySelector("buttonValid");
         addCart.addEventListener("click", function(e) { //evenement 'click' pour l'envoi au local storage
             let teddiesChoosen = {
                 picture: response.imageUrl,
