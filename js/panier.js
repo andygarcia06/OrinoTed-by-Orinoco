@@ -1,9 +1,8 @@
 //////////////////// CONSTANTES ////////////////////
 
 const infoCart = document.getElementById('infoPanier');
-const detailCart = document.getElementById('detailCommande');
-const detailBuy = document.createElement('div');
-detailCart.appendChild(detailBuy);
+const detailCart = document.getElementById('prixTotal');
+const detailBuy = document.getElementById('detailCommande');
 const thanksPage = document.getElementById('page_remerciements');
 
 const teddiesAdded_json = localStorage.getItem('product');
@@ -29,44 +28,61 @@ const myCommand = function() {
     for(let i in teddiesAdded) {
         const myDetail = document.createElement('div');
         detailBuy.appendChild(myDetail);
-        myDetail.className = 'detailOursonAchat'
         const myDetailName = document.createElement('div');
         myDetail.appendChild(myDetailName);
-        myDetailName.id = 'myDetailName';
+        myDetail.className = "m-auto"
+        myDetailName.className = "row";
+        const myDetailColor = document.createElement("div");
+        myDetail.appendChild(myDetailColor);
+        myDetailColor.className = "row";
+        const myDetailPrice = document.createElement("div");
+        myDetail.appendChild(myDetailPrice);
+        myDetailPrice.className= "row";
         const figPictureCart = document.createElement('figure');
         myDetailName.appendChild(figPictureCart);
-        figPictureCart.id= 'fig_pic_cart';
         const imgPictureCart = document.createElement('img');
         figPictureCart.appendChild(imgPictureCart);
         imgPictureCart.setAttribute('src', teddiesAdded[i].picture);
+        imgPictureCart.className  = 'd-block m-auto w-50 rounded-circle'
     
         const divNameCart = document.createElement('div');
         myDetailName.appendChild(divNameCart);
-        divNameCart.id= 'div_name_cart';
-        divNameCart.innerHTML = teddiesAdded[i].firstName;
+        divNameCart.innerHTML =  "Nom de votre commande :" ;
+        divNameCart.className = "font-weight-bold col";
+        const spanNameCart = document.createElement("span");
+        myDetailName.appendChild(spanNameCart);
+        spanNameCart.innerHTML = teddiesAdded[i].firstName;
+        spanNameCart.className = "font-weight-bold text-uppercase col text-right";
+        
         // Partie Choix Couleur
         const divColor = document.createElement('div');
-        myDetail.appendChild(divColor);
-        divColor.id = 'myDetailColor';
-        divColor.innerHTML = teddiesAdded[i].color;
+        myDetailColor.appendChild(divColor);
+        divColor.innerHTML = "Couleur de votre commande : ";
+        divColor.className = "font-weight-bold col";
+        const spanColor = document.createElement("span");
+        myDetailColor.appendChild(spanColor);
+        spanColor.innerHTML = teddiesAdded[i].color;
+        spanColor.className = "font-weight-bold text-uppercase col text-right";
+
         //Partie Prix 
-        const myDetailPrice = document.createElement('div');
-        myDetail.appendChild(myDetailPrice);
-        myDetailPrice.id = 'myDetailPrice';
-        myDetailPrice.innerHTML = [teddiesAdded[i].price].map(i => i / 100) + ' ' + '€';
+        const divPrice = document.createElement('div');
+        myDetailPrice.appendChild(divPrice);
+        divPrice.innerHTML = "Prix de votre commande : ";
+        divPrice.className = "font-weight-bold col";
+        const spanPrice = document.createElement("span");
+        myDetailPrice.appendChild(spanPrice);
+        spanPrice.innerHTML = [teddiesAdded[i].price].map(i => i / 100) + ' ' + '€';
+        spanPrice.className = "font-weight-bold text-uppercase col text-right";
     
     }
     // Partie Total Commande
     const divTotal = document.createElement('div');
     detailCart.appendChild(divTotal);
-    divTotal.id = 'divTotal';
     const totalPrice = document.createElement('div');
     divTotal.appendChild(totalPrice);
-    totalPrice.id = 'totalPrice';
     totalPrice.innerHTML = 'Total de votre Commande : ';
     const totalPriceCalcul = document.createElement('div');
     divTotal.appendChild(totalPriceCalcul);
-    totalPriceCalcul.id = 'totalPriceCalcul';
 
     let priceTeddies = [];
     if(teddiesAdded !== null) {
@@ -88,9 +104,7 @@ const myCommand = function() {
     const buttonEmptyCart = document.createElement('button');
     const divButton = document.createElement('div');
     detailCart.appendChild(divButton);
-    divButton.id = 'divDelete';
     divButton.appendChild(buttonEmptyCart);
-    buttonEmptyCart.id = 'deleteButton';
     buttonEmptyCart.setAttribute('type', 'submit');
     buttonEmptyCart.innerHTML = "Supprimer mon panier";
 
@@ -103,21 +117,17 @@ const myCommand = function() {
 
 /*----------- Fonction pour ajout Formulaire ----------*/
 function addForm() {
-    const myBask = document.getElementById('monPanier');
+    const myForm = document.getElementById('myForm');
     const divInformForm = document.createElement('div');
-    myBask.appendChild(divInformForm);
-    divInformForm.id = 'div_inform_form';
+    myForm.appendChild(divInformForm);
     const paragraphInform = document.createElement('p');
     divInformForm.appendChild(paragraphInform);
-    paragraphInform.id = 'paragraph_inform';
     paragraphInform.innerHTML = "Pour pouvoir valider votre commande, merci de remplir tous les champs.";
-    const myForm = document.createElement('form');
-    myBask.appendChild(myForm);
-    myForm.id = 'my_form';
+    const formOrder = document.createElement('form');
+    myForm.appendChild(formOrder);
     // AJOUT DU FORM PRENOM
     const divFormFirstName = document.createElement('div');
     myForm.appendChild(divFormFirstName);
-    divFormFirstName.id = 'div_form_first_name';
     const labelFirstName = document.createElement('label');
     divFormFirstName.appendChild(labelFirstName);
     labelFirstName.setAttribute('for', 'prénom');
@@ -131,7 +141,6 @@ function addForm() {
         let value = e.target.value;
         const divInputError = document.createElement('div');
         divFormFirstName.appendChild(divInputError);
-        divInputError.id ='div_input_error';
         const divError = document.getElementById('div_input_error');
         divError.innerHTML = '';
 
@@ -145,7 +154,6 @@ function addForm() {
     // AJOUT DU FORM NOM
     const divFormName = document.createElement('div');
     myForm.appendChild(divFormName);
-    divFormName.id = 'div_form_name';
     const labelName = document.createElement('label');
     divFormName.appendChild(labelName);
     labelName.setAttribute('for', 'name');
@@ -173,7 +181,6 @@ function addForm() {
     // AJOUT DU FORM ADRESSE
     const divFormAddress = document.createElement('div');
     myForm.appendChild(divFormAddress);
-    divFormAddress.id = 'div_form_address';
     const labelAdress = document.createElement('label');
     divFormAddress.appendChild(labelAdress);
     labelAdress.setAttribute('for', 'adresse');
@@ -197,7 +204,6 @@ function addForm() {
     // AJOUT DU FORM VILLE
     const divFormCity = document.createElement('div');
     myForm.appendChild(divFormCity);
-    divFormCity.id = 'div_form_city';
     const labelCity = document.createElement('label');
     divFormCity.appendChild(labelCity);
     labelCity.setAttribute('for', 'ville');
@@ -224,7 +230,6 @@ function addForm() {
     // AJOUT DU FORM EMAIL
     const divFormEmail = document.createElement('div');
     myForm.appendChild(divFormEmail);
-    divFormEmail.id = 'div_form_email';
     const labelEmail = document.createElement('label');
     divFormEmail.appendChild(labelEmail);
     labelEmail.setAttribute('for', 'email');
@@ -251,7 +256,6 @@ function addForm() {
     
     const divConfirm = document.createElement('div');
     myForm.appendChild(divConfirm);
-    divConfirm.id = 'div_confirm';
     
     const inputConfirmOrder = document.createElement('input');
     divConfirm.appendChild(inputConfirmOrder);
@@ -264,7 +268,6 @@ function addForm() {
         
         const divErrorButton = document.createElement('div');
         divConfirm.appendChild(divErrorButton);
-        divErrorButton.id='div_Error_Button';
         const errorButton = document.getElementById('div_Error_Button');
         errorButton.innerHTML ='';
 
@@ -311,15 +314,7 @@ function isValid(value) {
 function emailIsValid(value) {
     return /^[a-zA-Z0-9.:#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/.test(value);
 }
-/////////////////// NAVIGATEUR ////////////////
-let btn = document.querySelector('.toggle_btn');
-let nav = document.querySelector('.nav');
 
-btn.onclick = function() {
-    nav.classList.toggle('nav__open');
-    nav.style.zIndex='1';
-    
-}
 
 //////////////////// PROMISE REQUETE POST ////////////////////
 function sendPost(url, toSend){
@@ -344,7 +339,3 @@ function sendPost(url, toSend){
 cartEmpty();
 myCommand();
 addForm();
-
-
-
-
