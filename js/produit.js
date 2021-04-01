@@ -131,7 +131,7 @@ promiseGet()
 
         
         /////////// Evènement ///////////
-        const addCart = document.querySelector("buttonValid");
+        const addCart = document.getElementById("buttonValid");
         addCart.addEventListener("click", function(e) { //evenement 'click' pour l'envoi au local storage
             let teddiesChoosen = {
                 picture: response.imageUrl,
