@@ -1,12 +1,12 @@
 h5 {
-   font-weight: 8em; 
+   font-weight: 20em; 
    color : #2a1934;
    font-family: 'Dela Gothic One', cursive;
    border-top: #2a1934;
 }
 
 h5 + p {
-    font-weight: 10em; 
+    font-weight: 30em; 
     color : #190226;
     font-family: 'Hind', sans-serif;
     font-weight: bold;
