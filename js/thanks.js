@@ -33,15 +33,7 @@ function orderPage(response, priceTeddies) {
     const orderForId = document.getElementById('order_id');
     orderForId.innerHTML = idUrl;
 }
-/////////////////// NAVIGATEUR ////////////////
-let btn = document.querySelector('.toggle_btn');
-let nav = document.querySelector('.nav');
 
-btn.onclick = function() {
-    nav.classList.toggle('nav__open');
-    nav.style.zIndex='1';
-    
-}
 ////////////////////// APPEL DE LA FONCTION //////////////////////
 
 orderPage();

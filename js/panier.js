@@ -219,9 +219,9 @@ function addForm() {
         const divError3 = document.createElement("div");
         divFormAddress.appendChild(divError3);
         divError3.innerHTML = '';
-        if(isValid(value) === false) {
+        if(validateAdress(value) === false) {
             return (divError3.innerHTML ='Veuillez remplir votre adresse correctement !');
-        } else if(isValid(value) === true) {
+        } else if(validateAdress(value) === true) {
             return (divFormAddress.removeChild(divError3));
         }
 
@@ -284,9 +284,9 @@ function addForm() {
         const divError5 = document.createElement("div");
         divFormEmail.appendChild(divError5);
         divError5.innerHTML = '';
-        if(isValid(value) === false) {
+        if(validateEmail(value) === false) {
             return (divError5.innerHTML ='Cela ne correspond pas à une adresse mail, réessayez !');
-        } else if(isValid(value) === true) {
+        } else if(validateEmail(value) === true) {
             return (divFormEmail.removeChild(divInputError5));
         }
 
@@ -352,8 +352,13 @@ function addForm() {
 function isValid(value) {
     return /^[a-zA-Z]{3,}$/.test(value);
 }
-function emailIsValid(value) {
-    return /^[a-zA-Z0-9.:#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]{2,}[.][a-zA-Z]{2,3}$/.test(value);
+function validateEmail(value) {
+    let reg = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+    return reg.test(String(value).toLowerCase());
+}
+
+function validateAdress(value ){
+    return /^[a-z0-9\s,'-]*$/i.test(value);
 }
 
 
