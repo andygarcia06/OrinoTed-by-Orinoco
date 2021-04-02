@@ -21,7 +21,7 @@ function insertName(div, name){
     const newH3 = document.createElement("h3");
     div.appendChild(newH3);
     newH3.innerHTML = name;
-    newH3.className = "text-secondary font-weight-bold";
+    newH3.className = "text-btn-color card-title font-weight-bold";
 }
 
 function insertId(div, id){
@@ -32,16 +32,18 @@ function insertId(div, id){
     const newSpan = document.createElement("span");
     newP1.appendChild(newSpan);
     newSpan.innerHTML = "Numéro d'Id : ";
+    newSpan.className = "text-primary";
     const newP2 = document.createElement("p");
     newDiv2.appendChild(newP2);
     newP2.innerHTML = id;
-    newP2.className = "text-secondary font-weight-bold";
+    newP2.className = "text-primary font-weight-bold";
 }
 
 function insertColor(div){
     const newP3 = document.createElement("p");
     div.appendChild(newP3);
     const newSpan2 = document.createElement("span");
+    newSpan2.className = "text-primary";
     newP3.appendChild(newSpan2);
     newSpan2.innerHTML = "Couleur : Personnalisable";
 }
@@ -49,14 +51,15 @@ function insertDescription(div, description){
     const newP4 = document.createElement("p");
     div.appendChild(newP4);
     newP4.innerHTML = description;
+    newP4.className = "text-primary";
 }
 function insertPrice(div3, price){
     const newDiv4 = document.createElement("div");
     div3.appendChild(newDiv4);
     const newP5 = document.createElement("p");
     newDiv4.appendChild(newP5);
-    newP5.innerHTML = price;
-    newP5.className = "font-weight-bold";
+    newP5.innerHTML = "Prix du nounours : " + price;
+    newP5.className = "font-weight-bold text-btn-color";
 }
 function insertLienPerso(div3, idLien){
     const newDiv5 = document.createElement("div");
@@ -67,7 +70,7 @@ function insertLienPerso(div3, idLien){
     newP6.appendChild(newButton);
     const newA = document.createElement("a");
     newButton.appendChild(newA);
-    newButton.className = "btn btn-secondary d-block"
+    newButton.className = "btn btn-btn-color d-block"
     newA.setAttribute("href", "./produit.html?id=" + idLien);
     newA.innerHTML = "Modifiez votre Ourson !";
 }
@@ -109,7 +112,7 @@ promiseGet()
             insertImageUrl(newSection, response[i].imageUrl);
             const newDiv1 = document.createElement("div");
             newSection.appendChild(newDiv1);
-            newSection.className = "mb-5 p-3 w-100 border border-secondary rounded";
+            newSection.className = "mb-5 p-3 w-100 rounded bg-secondary card";
             insertName(newDiv1, response[i].name);
             insertId(newDiv1, response[i]._id);
             insertColor(newDiv1);

@@ -41,20 +41,21 @@ function insertName(description, teddy) {
     const nameTeddy = document.createElement("h3");
     description.appendChild(nameTeddy);
     nameTeddy.innerHTML = teddy.name;
-    nameTeddy.className = "text-secondary font-weight-bold text-center";
+    nameTeddy.className = "text-btn-color font-weight-bold text-center";
 }
 function insertId(description, teddy) {
     const divId = document.createElement("div");
     description.appendChild(divId);
     const paragraphNumId = document.createElement("p");
     divId.appendChild(paragraphNumId);
-    paragraphNumId.className = "text-secondary font-weight-bold";
+    paragraphNumId.className = "text-primary font-weight-bold";
     const newSpan = document.createElement("span");
     paragraphNumId.appendChild(newSpan);
     newSpan.innerHTML = "Numéro d'Id : ";
     const paragraphId = document.createElement("p");
     divId.appendChild(paragraphId);
     paragraphId.innerHTML = teddy._id;
+    paragraphId.className = "text-primary font-weight-bold";
 }
 function insertColor(description, teddyColors) {
     const divColor = document.createElement("div");
@@ -62,14 +63,11 @@ function insertColor(description, teddyColors) {
     const labelColor = document.createElement("label");
     divColor.appendChild(labelColor);
     labelColor.className = "form-floating";
-    labelColor.innerHTML = 'Sélectionner votre Couleur préférée : ';
-    labelColor.className = "text-secondary font-weight-bold floatingSelect";
-    const selectColor = document.createElement('select');
-    selectColor.className = "form-select";
-    selectColor.id = "floatingSelect";
-    selectColor.arialLabel = "Floating label select example";
+    labelColor.innerHTML = "Sélectionner votre Couleur préférée : ";
+    labelColor.className = "text-primary font-weight-bold floatingSelect";
+    const selectColor = document.createElement("select");
+    selectColor.className = "btn btn-btn-color font-weight-bold p-1 m-2";
     labelColor.appendChild(selectColor);
-    labelColor.for ="floatingSelect";
     
     for(let i = 0; i < teddyColors.length; i +=1){
         const secondOption = document.createElement("option");
@@ -83,7 +81,7 @@ function insertDescription(description, teddy) {
     const paragraphDescription = document.createElement("p");
     description.appendChild(paragraphDescription);
     paragraphDescription.innerHTML = teddy.description;
-    paragraphDescription.className = "text-secondary";
+    paragraphDescription.className = "text-primary font-weight-bold";
 }
 function insertButtonCart(section, teddy) {
     const divRate = document.createElement("div");
@@ -94,11 +92,11 @@ function insertButtonCart(section, teddy) {
     divPrice.className = "prixTeddy";
     const paragraphPrice = document.createElement("p");
     divPrice.appendChild(paragraphPrice);
-    paragraphPrice.innerHTML = [teddy.price].map(price => price / 100) + ' ' + '€';
-    paragraphPrice.className = "font-weight-bold"
+    paragraphPrice.innerHTML = "Prix du Nounours : " + [teddy.price].map(price => price / 100) + ' ' + '€';
+    paragraphPrice.className = "font-weight-bold text-primary"
     const buttonValid = document.createElement("button");
     divRate.appendChild(buttonValid);
-    buttonValid.className = "btn btn-secondary d-block m-auto";
+    buttonValid.className = "btn btn-btn-color d-block m-auto font-weight-bold";
     buttonValid.setAttribute("type", "submit");
     buttonValid.innerHTML = "Ajouter au Panier";
     buttonValid.id = "buttonValid"
@@ -118,7 +116,7 @@ promiseGet()
         insertPicture(mainSection, response);
         const teddyDescription = document.createElement("div");
         mainSection.appendChild(teddyDescription);
-        mainSection.className = "border border-secondary p-5 rounded w-100 d-block"
+        mainSection.className = "border bg-secondary p-5 rounded w-100 d-block"
         insertName(teddyDescription, response);
         insertId(teddyDescription, response);
         insertColor(teddyDescription,response.colors);
