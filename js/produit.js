@@ -61,7 +61,7 @@ function insertColor(description, teddyColors) {
     description.appendChild(divColor);
     const labelColor = document.createElement("label");
     divColor.appendChild(labelColor);
-    divColor.className = "form-floating";
+    labelColor.className = "form-floating";
     labelColor.innerHTML = 'Sélectionner votre Couleur préférée : ';
     labelColor.className = "text-secondary font-weight-bold floatingSelect";
     const selectColor = document.createElement('select');
