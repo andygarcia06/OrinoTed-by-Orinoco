@@ -1,17 +1,73 @@
+h2,h3 {
+   font-family: 'Chivo', sans-serif;
+}
+
+h2 {
+    font-size: 50px;
+}
+
+h3 {
+    font-size: 40px;
+    margin-bottom:250px;
+}
+
 h5 {
-   font-weight: 20em; 
+   font-size: 40px; 
    color : #2a1934;
-   font-family: 'Dela Gothic One', cursive;
+   font-family: 'Chivo', sans-serif;
    border-top: #2a1934;
 }
 
 h5 + p {
-    font-weight: 30em; 
+    font-size: 24px; 
     color : #190226;
-    font-family: 'Hind', sans-serif;
+    font-family: 'Chivo', sans-serif;
     font-weight: bold;
 
 }
+
+.couleur-dystop {
+    color: #a466c3;
+}
+
+@media only screen and (max-width: 600px) {
+        h5 {
+            font-size: 15px; 
+         }
+         
+         h5 + p {
+             font-size: 10px; 
+         }
+
+         h2 {
+            font-size: 30px;
+        }
+        
+        h3 {
+            font-size: 25px;
+        }
+     }
+
+@media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
+
+    h5 {
+        font-size: 25px; 
+     }
+     
+     h5 + p {
+         font-size: 18px; 
+     }
+
+     h2 {
+        font-size: 35px;
+    }
+    
+    h3 {
+        font-size: 28px;
+        margin-bottom:10px;
+    }
+ 
+     }
 
 
 
