@@ -304,13 +304,13 @@ function addForm() {
     btnConfirmOrder.innerHTML = "Valider";
     const divErreurBtn = document.createElement("div");
     divConfirm.appendChild(divErreurBtn);
-    divErreurBtn.className = "w-100 h-100 bg-secondary py-2 font-weight-bold";
+    divErreurBtn.className = "w-100 h-100 bg-secondary py-2 mt-2";
     divErreurBtn.innerHTML = "";
  
 
     btnConfirmOrder.addEventListener("click", function(){
         if(inputFirstName.value === "" || inputName.value === "" || inputAddress.value === "" || inputCity.value === "" || inputEmail.value ==="" ) {
-            return (divErreurBtn.innerHTML = "Veuillez remplir vos informations.");
+            return (divErreurBtn.innerHTML = "Veuillez remplir vos informations.")&&(divErreurBtn.className = "text-danger font-weight-bold");
         }else if(teddiesAdded === null) {
             return (divErreurBtn.innerHTML = "Veuillez faire vos achats.");
         }else {
