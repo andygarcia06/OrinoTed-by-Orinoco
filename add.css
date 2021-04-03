@@ -1,5 +1,9 @@
-h2,h3 {
+h1, h2,h3 {
    font-family: 'Chivo', sans-serif;
+}
+
+h1{
+    font-size: 50px;
 }
 
 h2 {
@@ -30,6 +34,10 @@ h5 + p {
     color: #a466c3;
 }
 
+#page_remerciement > p {
+    font-family: 'Chivo', sans-serif;
+}
+
 @media only screen and (max-width: 600px) {
         h5 {
             font-size: 15px; 
@@ -37,6 +45,10 @@ h5 + p {
          
          h5 + p {
              font-size: 13px; 
+         }
+
+         h1{
+             font-size : 29px;
          }
 
          h2 {
@@ -56,6 +68,10 @@ h5 + p {
      
      h5 + p {
          font-size: 18px; 
+     }
+
+     h1 {
+         font-size : 34px;
      }
 
      h2 {
