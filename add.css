@@ -8,18 +8,17 @@ h2 {
 
 h3 {
     font-size: 40px;
-    margin-bottom:250px;
+    margin-bottom:20px;
 }
 
 h5 {
-   font-size: 40px; 
+   font-size: 50px; 
    color : #2a1934;
    font-family: 'Chivo', sans-serif;
    border-top: #2a1934;
 }
 
 h5 + p {
-    font-size: 24px; 
     color : #190226;
     font-family: 'Chivo', sans-serif;
     font-weight: bold;
@@ -40,18 +39,18 @@ h5 + p {
          }
 
          h2 {
-            font-size: 30px;
+            font-size: 25px;
         }
         
         h3 {
-            font-size: 25px;
+            font-size: 20px;
         }
      }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
 
     h5 {
-        font-size: 25px; 
+        font-size: 20px; 
      }
      
      h5 + p {
@@ -59,11 +58,11 @@ h5 + p {
      }
 
      h2 {
-        font-size: 35px;
+        font-size: 30px;
     }
     
     h3 {
-        font-size: 28px;
+        font-size: 24px;
         margin-bottom:10px;
     }
  
