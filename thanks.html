@@ -10,8 +10,11 @@
     <link href="https://fonts.googleapis.com/css2?family=Miltonian+Tattoo&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link href="default.css" rel="stylesheet">
+    <link href="add.css" rel="stylesheet" >
     <title>OrinoTed by Orinoco - Site de vente d'ours en peluche fait main, unique et customizable</title>
     <link rel="shortcut icon" type="image/jpg" href="img/orinoco-favicon.jpg"/>
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Chivo:wght@300&display=swap" rel="stylesheet">
     
 </head>
 
@@ -54,24 +57,33 @@
  
  
       <!--Section vente des articles-->
-        <main class="container  my-3 w-100" id="page_remerciements">
-          <div class="row" id="thanks">
-            <p class="col-sm-8"id="premiere_partie">Nous vous remercions pour votre achat d'un montant de &nbsp;</p>
-            <p class="col-sm-2" id="prix_achat"></p>
-            <p class="col-sm-1"id="euro"> €.</p>
-            <div class="col-sm-1"></div>
-         </div>
-         <div class="row" id="thanks2">
-            <p class="col-sm-9" id="deuxieme_partie">Votre numéro de commande est le :</p>
-            <p class="col-sm-3" id="order_id"></p>
-         </div>
-         <div id="thanks3">
-            <p class="text-left" id="troisieme_partie"> Gardez le. Il vous sera utile, lors d'éventuels échanges entre nous.</p>
-            <p class="text-left">Toute l'équipe d'<span class="text-secondary text-uppercase text-weight-bold">Oripictures</span> vous remercie et vous souhaite de magnifiques photos.</p>
-         </div>
-         <button class="btn btn-success d-block m-auto ">
-            <a href="index.html"> Revenir sur notre catalogue </a>
-         </button>
+        <main class="container  my-3 w-100 border-radius" id="page_remerciements">
+
+
+          <div class="d-block mt-5 mb-2 row w-25">
+            <h2 id="my_title" class="text-secondary text-center font-weight-bold card-title col">Cher<span class="text-btn-color"> client,</span></h2>
+          </div>
+
+          <figure id="fond-photo-ourson"></figure>
+          
+          <div id="thanks">
+            <p id="premiere_partie"></p>
+            <p id="prix_achat"></p>
+          </div>
+
+          <div id="thanks2">
+            <p id="order_id1"></p>
+            <p id="order_id2"></p>
+          </div> 
+
+          <div id="thanks3">
+            <p id="remerciements"></p>
+            <p id="remerciement2"></p>
+          </div> 
+
+          <div id="button_thanks">
+          </div>
+
         </main> 
 
          <!-- FOOTER -->
@@ -127,7 +139,7 @@
 
         <div class="row my-3 d-block mx-1">
           <div class="card h-100 bg-primary py-2">
-            <h5 class="m-auto pb-2"> Newseltter</h5>
+            <h4 class="m-auto pb-2"> Newseltter</h4>
             <button class="btn btn-danger m-auto"> <a href="#">Je m'abonne</a></button>
           </div>
         </div>
@@ -138,7 +150,7 @@
         </div>
   </footer>
 
-    <script src="js/produit.js"></script>
+    <script src="js/thanks.js"></script>
     <script src="js/infobulle.js"></script>
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
