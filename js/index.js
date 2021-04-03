@@ -83,6 +83,7 @@ function serverOut() {
     const divServerOut = document.createElement("div");
     catalogue.appendChild(divServerOut);
     divServerOut.innerHTML = "Nous rencontrons actuellement un léger problème, nous revenons très vite !!!";
+    divServerOut.className = "m-auto font-weight-bold text-center"
 }
 
 function promiseGet() {

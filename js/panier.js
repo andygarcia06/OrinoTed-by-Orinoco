@@ -301,7 +301,7 @@ function addForm() {
     const btnConfirmOrder = document.createElement("button");
     divConfirm.appendChild(btnConfirmOrder);
     btnConfirmOrder.className = "btn btn-btn-color w-25 h-25 font-weight-bold m-auto";
-    btnConfirmOrder.innerHTML = "Valider ma commande";
+    btnConfirmOrder.innerHTML = "Valider";
     const divErreurBtn = document.createElement("div");
     divConfirm.appendChild(divErreurBtn);
     divErreurBtn.className = "w-100 h-100 bg-secondary py-2 font-weight-bold";

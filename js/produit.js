@@ -41,7 +41,7 @@ function insertName(description, teddy) {
     const nameTeddy = document.createElement("h3");
     description.appendChild(nameTeddy);
     nameTeddy.innerHTML = teddy.name;
-    nameTeddy.className = "text-btn-color font-weight-bold text-center";
+    nameTeddy.className = "text-btn-color font-weight-bold";
 }
 function insertId(description, teddy) {
     const divId = document.createElement("div");
@@ -55,7 +55,7 @@ function insertId(description, teddy) {
     const paragraphId = document.createElement("p");
     divId.appendChild(paragraphId);
     paragraphId.innerHTML = teddy._id;
-    paragraphId.className = "text-primary font-weight-bold";
+    paragraphId.className = "text-primary";
 }
 function insertColor(description, teddyColors) {
     const divColor = document.createElement("div");
@@ -66,7 +66,7 @@ function insertColor(description, teddyColors) {
     labelColor.innerHTML = "Sélectionner votre Couleur préférée : ";
     labelColor.className = "text-primary font-weight-bold floatingSelect";
     const selectColor = document.createElement("select");
-    selectColor.className = "btn btn-btn-color font-weight-bold p-1 m-2";
+    selectColor.className = "btn btn-primary font-weight-bold p-1 m-2";
     labelColor.appendChild(selectColor);
     
     for(let i = 0; i < teddyColors.length; i +=1){
@@ -93,10 +93,10 @@ function insertButtonCart(section, teddy) {
     const paragraphPrice = document.createElement("p");
     divPrice.appendChild(paragraphPrice);
     paragraphPrice.innerHTML = "Prix du Nounours : " + [teddy.price].map(price => price / 100) + ' ' + '€';
-    paragraphPrice.className = "font-weight-bold text-primary"
+    paragraphPrice.className = "font-weight-bold text-btn-color"
     const buttonValid = document.createElement("button");
     divRate.appendChild(buttonValid);
-    buttonValid.className = "btn btn-btn-color d-block m-auto font-weight-bold";
+    buttonValid.className = "btn btn-btn-color d-block mx-auto mt-5 font-weight-bold";
     buttonValid.setAttribute("type", "submit");
     buttonValid.innerHTML = "Ajouter au Panier";
     buttonValid.id = "buttonValid"
