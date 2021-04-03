@@ -18,8 +18,8 @@ const cartEmpty = function() {
         detailBuy.style.display = "none";
         const divEmpty = document.createElement("div");
         infoCart.appendChild(divEmpty);
-        divEmpty.innerHTML = "Votre Panier est vide";
-        divEmpty.className = "text-center w-100";
+        divEmpty.innerHTML = "Votre Panier est vide !";
+        divEmpty.className = "text-center font-weight-bold text-btn-color w-100";
     }
 }
 /*------ fonction pour alimenter le tableau de commande -----*/
