@@ -1,6 +1,5 @@
 //////////////////// CONSTANTES ////////////////////
 
-const infoCart = document.getElementById("infoPanier");
 const detailCart = document.getElementById("prixTotal");
 const detailBuy = document.getElementById("detailCommande");
 const myForm = document.getElementById("monForm");
@@ -17,9 +16,9 @@ const cartEmpty = function() {
         detailCart.style.display = "none";
         detailBuy.style.display = "none";
         const divEmpty = document.createElement("div");
-        infoCart.appendChild(divEmpty);
+        myForm.appendChild(divEmpty);
         divEmpty.innerHTML = "Votre Panier est vide !";
-        divEmpty.className = "text-center font-weight-bold text-btn-color w-100";
+        divEmpty.className = "text-center font-weight-bold mb-3 text-danger w-100";
     }
 }
 /*------ fonction pour alimenter le tableau de commande -----*/
@@ -31,7 +30,7 @@ const myCommand = function() {
         detailBuy.appendChild(myDetail);
         const myDetailName = document.createElement("div");
         myDetail.appendChild(myDetailName);
-        myDetail.className = "m-auto border-top border-primary"
+        myDetail.className = "my-2 p-2 card bg-secondary shadow-sm"
         myDetailName.className = "row";
         const myDetailColor = document.createElement("div");
         myDetail.appendChild(myDetailColor);
@@ -39,44 +38,48 @@ const myCommand = function() {
         const myDetailPrice = document.createElement("div");
         myDetail.appendChild(myDetailPrice);
         myDetailPrice.className= "row";
+        const myDetailDisable = document.createElement("div");
+        myDetail.appendChild(myDetailDisable);
+        myDetailDisable.className = "row";
         const figPictureCart = document.createElement("figure");
         myDetail.appendChild(figPictureCart);
         const imgPictureCart = document.createElement("img");
         figPictureCart.appendChild(imgPictureCart);
         imgPictureCart.setAttribute("src", teddiesAdded[i].picture);
-        imgPictureCart.className  = 'd-block m-auto w-50 rounded-circle'
+        imgPictureCart.className  = "d-block mx-auto my-2 w-50 rounded-circle card-img-top";
         
         // Partie Nom 
 
         const divNameCart = document.createElement("div");
         myDetailName.appendChild(divNameCart);
-        divNameCart.innerHTML =  "Nom de votre commande :" ;
-        divNameCart.className = "font-weight-bold col";
+        divNameCart.innerHTML =  "Nom de votre ours :" ;
+        divNameCart.className = "font-weight-bold col-8 writtingMediaQueriesMobile";
         const spanNameCart = document.createElement("span");
         myDetailName.appendChild(spanNameCart);
         spanNameCart.innerHTML = teddiesAdded[i].firstName;
-        spanNameCart.className = "font-weight-bold text-uppercase col text-right text-btn-color";
+        spanNameCart.className = "font-weight-bold text-uppercase col-4 text-right text-btn-color orderWrittingStyle";
         
         // Partie Choix Couleur
         const divColor = document.createElement("div");
         myDetailColor.appendChild(divColor);
-        divColor.innerHTML = "Couleur de votre commande : ";
-        divColor.className = "font-weight-bold col";
+        divColor.innerHTML = "Couleur de votre ours : ";
+        divColor.className = "font-weight-bold col-8 writtingMediaQueriesMobile";
         const spanColor = document.createElement("span");
         myDetailColor.appendChild(spanColor);
         spanColor.innerHTML = teddiesAdded[i].color;
-        spanColor.className = "font-weight-bold text-uppercase col text-right text-btn-color";
+        spanColor.className = "font-weight-bold text-uppercase col-4 text-right text-btn-color orderWrittingStyle";
 
         //Partie Prix 
         const divPrice = document.createElement("div");
         myDetailPrice.appendChild(divPrice);
-        divPrice.innerHTML = "Prix de votre commande : ";
-        divPrice.className = "font-weight-bold col";
+        divPrice.innerHTML = "Prix de votre ours : ";
+        divPrice.className = "font-weight-bold col-8 writtingMediaQueriesMobile";
         const spanPrice = document.createElement("span");
         myDetailPrice.appendChild(spanPrice);
         spanPrice.innerHTML = [teddiesAdded[i].price].map(i => i / 100) + ' ' + '€';
-        spanPrice.className = "font-weight-bold text-uppercase col text-right text-btn-color";
-    
+        spanPrice.className = "font-weight-bold text-uppercase col-4 text-right text-btn-color orderWrittingStyle";
+
+
     }
     // Partie Total Commande
     const divTotal = document.createElement("div");
@@ -84,8 +87,8 @@ const myCommand = function() {
     divTotal.className = "row m-auto font-weight-bold"
     const totalPrice = document.createElement("div");
     divTotal.appendChild(totalPrice);
-    totalPrice.className = "mb-2"
-    totalPrice.innerHTML = "Total de votre Commande : ";
+    totalPrice.innerHTML = "Total de votre Commande :";
+    totalPrice.className = "mb-2 "
     const totalPriceCalcul = document.createElement("div");
     divTotal.appendChild(totalPriceCalcul);
     totalPriceCalcul.className = "text-btn-color mx-2"
@@ -119,6 +122,7 @@ const myCommand = function() {
         localStorage.clear();
         cartEmpty();
     })
+    
         
 }
 
@@ -154,13 +158,14 @@ function addForm() {
         let value = e.target.value;
         const divInputError = document.createElement("div");
         divFormFirstName.appendChild(divInputError);
-        const divError = document.createElement("div");
-        divFormFirstName.appendChild(divError);
-        divError.innerHTML = "";
+        divInputError.id ="div_input_error";
+        const divError = document.getElementById("div_input_error");
+        divError.innerHTML = '';
+
         if(isValid(value) === false) {
-            return (divError.innerHTML ="Veuillez remplir votre Prénom correctement !");
+            return (divError.innerHTML ="Veuillez remplir votre Prénom correctement !") ;
         } else if(isValid(value) === true) {
-            return (divError.remove);
+            return (divFormFirstName.removeChild(divError));
         }
 
     })
@@ -183,11 +188,12 @@ function addForm() {
     inputName.addEventListener("change", function(e) {
         console.log(inputName.value);
         let value = e.target.value;
-        const divInputError2 = document.createElement("div");
-        divFormName.appendChild(divInputError2);
-        const divError2 = document.createElement("div");
-        divFormName.appendChild(divError2);
-        divError2.innerHTML = '';
+        const divInputError = document.createElement("div");
+        divFormName.appendChild(divInputError);
+        divInputError.id ="div_input_error2";
+        const divError2 = document.getElementById('div_input_error2');
+        divError2.innerHTML = "";
+
         if(isValid(value) === false) {
             return (divError2.innerHTML ="Veuillez remplir votre Nom correctement !");
         } else if(isValid(value) === true) {
@@ -196,14 +202,15 @@ function addForm() {
 
     })
     
-    // AJOUT DU FORM ADRESSE
+    // AJOUT DU FORM ZIP CODE
+
     const divFormAddress = document.createElement("div");
     myForm.appendChild(divFormAddress);
     divFormAddress.className = "form-group text-center";
     const labelAdress = document.createElement("label");
     divFormAddress.appendChild(labelAdress);
     labelAdress.setAttribute("for", "adresse");
-    labelAdress.innerHTML = "Adresse :*";
+    labelAdress.innerHTML = "Code Postal :*";
     labelAdress.className = "form-label";
     const inputAddress = document.createElement("input");
     divFormAddress.appendChild(inputAddress);
@@ -214,14 +221,15 @@ function addForm() {
     inputAddress.addEventListener("change", function(e) {
         console.log(inputAddress.value);
         let value = e.target.value;
-        const divInputError3 = document.createElement("div");
-        divFormAddress.appendChild(divInputError3);
-        const divError3 = document.createElement("div");
-        divFormAddress.appendChild(divError3);
-        divError3.innerHTML = '';
-        if(validateAdress(value) === false) {
-            return (divError3.innerHTML ="Veuillez remplir votre adresse correctement !");
-        } else if(validateAdress(value) === true) {
+        const divInputError = document.createElement('div');
+        divFormAddress.appendChild(divInputError);
+        divInputError.id ="div_input_error3";
+        const divError3 = document.getElementById("div_input_error3");
+        divError3.innerHTML = "";
+
+        if(validateZipCode(value) === false) {
+            return (divError3.innerHTML ="Veuillez remplir votre Code postal correctement !");
+        } else if(validateZipCode(value) === true) {
             return (divFormAddress.removeChild(divError3));
         }
 
@@ -246,13 +254,14 @@ function addForm() {
     inputCity.addEventListener("change", function(e) {
         console.log(inputCity.value);
         let value = e.target.value;
-        const divInputError4 = document.createElement("div");
-        divFormCity.appendChild(divInputError4);
-        const divError4 = document.createElement("div");
-        divFormCity.appendChild(divError4);
+        const divInputError = document.createElement("div");
+        divFormCity.appendChild(divInputError);
+        divInputError.id ="div_input_error4";
+        const divError4 = document.getElementById("div_input_error4");
         divError4.innerHTML = "";
+
         if(isValid(value) === false) {
-            return (divError4.innerHTML ="Veuillez remplir votre ville de résidence !");
+            return (divError4.innerHTML ="Veuillez remplir votre Ville correctement !");
         } else if(isValid(value) === true) {
             return (divFormCity.removeChild(divError4));
         }
@@ -279,15 +288,16 @@ function addForm() {
     inputEmail.addEventListener("change", function(e) {
         console.log(inputEmail.value);
         let value = e.target.value;
-        const divInputError5 = document.createElement("div");
-        divFormEmail.appendChild(divInputError5);
-        const divError5 = document.createElement("div");
-        divFormEmail.appendChild(divError5);
+        const divInputError = document.createElement("div");
+        divFormEmail.appendChild(divInputError);
+        divInputError.id ="div_input_error5";
+        const divError5 = document.getElementById("div_input_error5");
         divError5.innerHTML = "";
+
         if(validateEmail(value) === false) {
-            return (divError5.innerHTML ="Cela ne correspond pas à une adresse mail, réessayez !");
+            return (divError5.innerHTML ="Veuillez remplir votre Email correctement !") ;
         } else if(validateEmail(value) === true) {
-            return (divFormEmail.removeChild(divInputError5));
+            return (divFormEmail.removeChild(divError5));
         }
 
     })
@@ -357,8 +367,8 @@ function validateEmail(value) {
     return reg.test(String(value).toLowerCase());
 }
 
-function validateAdress(value ){
-    return /^[a-z0-9\s,'-]*$/i.test(value);
+function validateZipCode(value ){
+    return /^(?:[0-8]\d|9[0-8])\d{3}$/.test(value);
 }
 
 

@@ -34,9 +34,24 @@ h5 + p {
     color: #a466c3;
 }
 
+.orderWrittingStyle{
+    font-family: 'Chivo', sans-serif;
+    font-size: 15px;
+}
+
+
+
 #page_remerciement > p {
     font-family: 'Chivo', sans-serif;
 }
+
+#div_input_error, #div_input_error2 ,#div_input_error3 ,#div_input_error4 ,#div_input_error5 {
+    color: #a466c3;
+    padding: 1%;
+    font-weight: bold;
+}
+
+
 
 @media only screen and (max-width: 600px) {
         h5 {
@@ -57,6 +72,19 @@ h5 + p {
         
         h3 {
             font-size: 22px;
+        }
+
+        .writtingMediaQueriesMobile {
+            font-size : 10px;
+        }
+
+        .orderWrittingStyle{
+            font-family: 'Chivo', sans-serif;
+            font-size: 10px;
+        }
+
+        .hidden {
+            font-size: 0.1px;
         }
      }
 

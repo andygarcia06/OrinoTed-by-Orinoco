@@ -6,7 +6,7 @@ const idUrl = url.searchParams.get("orderId");
 
 ///////////////////// CONSTANTES //////////////////////
 
-const teddiesAdded_json = localStorage.getItem('product');
+const teddiesAdded_json = localStorage.getItem("product");
 const teddiesAdded = JSON.parse(teddiesAdded_json);
 
 ///////////////////// CALCUL MONTANT TOTAL COMMANDE //////////////////////
@@ -39,7 +39,7 @@ function orderPage() {
 
     const thanks2 = document.getElementById("thanks2");
     thanks2.className = "row";
-    const orderForId1 = document.getElementById('order_id1');
+    const orderForId1 = document.getElementById("order_id1");
     orderForId1.className = "col-6 font-weight-bold"
     orderForId1.innerHTML = "Voici une information qui vous sera utile, votre numéro de commande est le : " ;
     const orderForId2 = document.getElementById("order_id2");
