@@ -327,10 +327,9 @@ function addForm() {
             return (divErreurBtn.innerHTML = "Veuillez remplir toutes les informations obligatoires.")&&(divErreurBtn.className = "text-danger font-weight-bold pt-3")&&(inputsForm.className = "border border-danger");
         }else if(teddiesAdded === null) {
             return (divErreurBtn.innerHTML = "Veuillez faire vos achats.");
-        }else if(isValid(inputFirstName.value)=== false || isValid(inputName.value) === false || validateZipCode(inputAddress.value) === false || isValid(inputCity.value)===false||validateEmail(inputEmail.value)===false){
+        }else if(isValid(inputFirstName.value)=== false || isValid(inputName.value) === false || validateZipCode(inputAddress.value) === false || isValid(inputCity.value)=== false || validateEmail(inputEmail.value)=== false ){
            return(btnConfirmOrder.className = "btn btn-danger w-25 font-weight-bold")&&(divErreurBtn.innerHTML = "Veuillez remplir vos informations correctement.")&&(divErreurBtn.className = "text-danger font-weight-bold pt-3");
-        }else{
-            
+        }else{ 
             let contact = {
                 firstName: inputFirstName.value,
                 lastName: inputName.value,
@@ -341,9 +340,9 @@ function addForm() {
             
             let products = [];
             
-            for(let p = 0 ; p < teddiesAdded.length ; p++) {
+            for(let i = 0 ; i < teddiesAdded.length ; i++) {
             
-                products.push(teddiesAdded[p].theId);
+                products.push(teddiesAdded[i].theId);
                
             }
 
