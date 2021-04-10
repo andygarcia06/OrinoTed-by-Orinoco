@@ -11,6 +11,8 @@ const textIsValid = document.getElementsByClassName("valueIsValid");
 const email = document.getElementsByClassName("valueValidateEmail");
 const zipCode = document.getElementsByClassName("valueValidateZipCode");
 
+const inputsForm = document.getElementsByClassName("input");
+
 //////////////////// FUNCTIONS ////////////////////
 
 /*----- fonction pour panier vide -----*/
@@ -168,7 +170,7 @@ function addForm() {
         if(isValid(value) === false) {
             return (divError.innerHTML ="Veuillez remplir votre Prénom correctement !")//&&(btnConfirmOrder.style.visibility = "hidden") ;
         } else if(isValid(value) === true) {
-            return ((divFormFirstName.removeChild(divError))&&(divError.style))//&&(btnConfirmOrder.style.visibility = "visible"));
+            return ((divFormFirstName.removeChild(divError)&&(divInputError.id = "")))//&&(btnConfirmOrder.style.visibility = "visible"));
         }
 
     })
@@ -191,16 +193,16 @@ function addForm() {
     inputName.addEventListener("change", function(e) {
         console.log(inputName.value);
         let value = e.target.value;
-        const divInputError = document.createElement("div");
-        divFormName.appendChild(divInputError);
-        divInputError.id ="div_input_error2";
+        const divInputError2 = document.createElement("div");
+        divFormName.appendChild(divInputError2);
+        divInputError2.id ="div_input_error2";
         const divError2 = document.getElementById('div_input_error2');
         divError2.innerHTML = "";
 
         if(isValid(value) === false) {
             return (divError2.innerHTML ="Veuillez remplir votre Nom correctement !")//&&(btnConfirmOrder.style.visibility = "hidden");
         } else if(isValid(value) === true) {
-            return ((divFormName.removeChild(divError2)))//&&(btnConfirmOrder.style.visibility = "visible"));
+            return ((divFormName.removeChild(divError2))&&((divInputError2.id = "")))//&&(btnConfirmOrder.style.visibility = "visible"));
         }
 
     })
@@ -224,16 +226,16 @@ function addForm() {
     inputAddress.addEventListener("change", function(e) {
         console.log(inputAddress.value);
         let value = e.target.value;
-        const divInputError = document.createElement('div');
-        divFormAddress.appendChild(divInputError);
-        divInputError.id ="div_input_error3";
+        const divInputError3 = document.createElement('div');
+        divFormAddress.appendChild(divInputError3);
+        divInputError3.id ="div_input_error3";
         const divError3 = document.getElementById("div_input_error3");
         divError3.innerHTML = "";
 
         if(validateZipCode(value) === false) {
             return (divError3.innerHTML ="Veuillez remplir votre Code postal correctement !")//&&(btnConfirmOrder.style.visibility = "hidden");
         } else if(validateZipCode(value) === true) {
-            return (divFormAddress.removeChild(divError3))// &&(btnConfirmOrder.style.visibility = "visible"));
+            return (divFormAddress.removeChild(divError3)&&((divInputError3.id = "")))// &&(btnConfirmOrder.style.visibility = "visible"));
         }
 
     })
@@ -257,16 +259,16 @@ function addForm() {
     inputCity.addEventListener("change", function(e) {
         console.log(inputCity.value);
         let value = e.target.value;
-        const divInputError = document.createElement("div");
-        divFormCity.appendChild(divInputError);
-        divInputError.id ="div_input_error4";
+        const divInputError4 = document.createElement("div");
+        divFormCity.appendChild(divInputError4);
+        divInputError4.id ="div_input_error4";
         const divError4 = document.getElementById("div_input_error4");
         divError4.innerHTML = "";
 
         if(isValid(value) === false) {
             return (divError4.innerHTML ="Veuillez remplir votre Ville correctement !")//&&(btnConfirmOrder.style.visibility = "hidden");
         } else if(isValid(value) === true) {
-            return (divFormCity.removeChild(divError4))//&&(btnConfirmOrder.style.visibility = "visible"));
+            return (divFormCity.removeChild(divError4)&&((divInputError4.id = "")))//&&(btnConfirmOrder.style.visibility = "visible"));
         }
 
     })
@@ -285,22 +287,21 @@ function addForm() {
     const inputEmail = document.createElement("input");
     divFormEmail.appendChild(inputEmail);
     inputEmail.setAttribute("type", "email");
-    inputEmail.setAttribute("id", "emailAd");
     inputEmail.className = "form-control m-auto w-50 validateEmail input";
 
     inputEmail.addEventListener("change", function(e) {
         console.log(inputEmail.value);
         let value = e.target.value;
-        const divInputError = document.createElement("div");
-        divFormEmail.appendChild(divInputError);
-        divInputError.id ="div_input_error5";
+        const divInputError5 = document.createElement("div");
+        divFormEmail.appendChild(divInputError5);
+        divInputError5.id ="div_input_error5";
         const divError5 = document.getElementById("div_input_error5");
         divError5.innerHTML = "";
 
         if(validateEmail(value) === false) {
             return (divError5.innerHTML ="Veuillez remplir votre Email correctement !")//&&(btnConfirmOrder.style.visibility = "hidden") ;
         } else if(validateEmail(value) === true) {
-            return (divFormEmail.removeChild(divError5))//&&(btnConfirmOrder.style.visibility = "visible")); 
+            return (divFormEmail.removeChild(divError5)&&(divInputError5.id = ""))//&&(btnConfirmOrder.style.visibility = "visible")); 
         }
 
     })
@@ -323,7 +324,7 @@ function addForm() {
         
         btnConfirmOrder.addEventListener("click", function(e){
         if(inputFirstName.value === "" || inputName.value === "" || inputAddress.value === "" || inputCity.value === "" || inputEmail.value ==="" ) {
-            return (divErreurBtn.innerHTML = "Veuillez remplir toutes les informations obligatoires.")&&(divErreurBtn.className = "text-danger font-weight-bold pt-3");
+            return (divErreurBtn.innerHTML = "Veuillez remplir toutes les informations obligatoires.")&&(divErreurBtn.className = "text-danger font-weight-bold pt-3")&&(inputsForm.className = "border border-danger");
         }else if(teddiesAdded === null) {
             return (divErreurBtn.innerHTML = "Veuillez faire vos achats.");
         }else if(isValid(inputFirstName.value)=== false || isValid(inputName.value) === false || validateZipCode(inputAddress.value) === false || isValid(inputCity.value)===false||validateEmail(inputEmail.value)===false){
