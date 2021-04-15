@@ -23,7 +23,7 @@ let priceTeddies = [];
     let calculPrice = arrayPrice.reduce(calculator);
     
 
-////////////////////// FUNCTIONS  //////////////////////
+////////////////////// FONCTIONS  //////////////////////
 
 /*----------- Fonction pour gestion page Remerciement ----------*/
 function orderPage() {
@@ -35,6 +35,7 @@ function orderPage() {
     const priceCart = document.getElementById('prix_achat');
     priceCart.innerHTML =  calculPrice + "€";
     priceCart.className = " col-6 font-weight-bold text-btn-color";
+    // console.log(priceCart.calculPrice);
 
 
     const thanks2 = document.getElementById("thanks2");
@@ -45,6 +46,7 @@ function orderPage() {
     const orderForId2 = document.getElementById("order_id2");
     orderForId2.innerHTML = idUrl;
     orderForId2.className = "col-6 text-btn-color font-weight-bold";
+    // console.log(orderForId2.idUrl);
 
     const remerciementFinal = document.getElementById("remerciements");
     remerciementFinal.innerHTML = "Gardez le. Il vous sera utile, lors d'éventuels échanges entre nous, ou pour traquer la livraison ! "
@@ -52,6 +54,7 @@ function orderPage() {
     const remerciementFinal2 = document.getElementById("remerciement2");
     remerciementFinal2.innerHTML = "Toute l'équipe d'OrinoTed vous remercie ! A très vite !"
     remerciementFinal2.className = "font-weight-bold";
+    
 
     const divButtonThanks = document.getElementById("button_thanks");
     divButtonThanks.className = "m-auto w-100 py-4"

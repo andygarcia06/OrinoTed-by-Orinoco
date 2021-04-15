@@ -7,7 +7,7 @@ const urlGet = "http://localhost:3000/api/teddies/";
 
 
 
-////////////////////// FUNCTIONS //////////////////////
+////////////////////// FONCTIONS //////////////////////
 
 function promiseGet() {
     return new Promise((resolve, reject) => {
@@ -28,6 +28,9 @@ function promiseGet() {
 
 }
 
+
+// Fonction insertion image ours en peluche//
+
 function insertPicture(section, teddy) {
     const newFigure = document.createElement("figure");
     section.appendChild(newFigure);
@@ -36,13 +39,23 @@ function insertPicture(section, teddy) {
     newPic.setAttribute("src", teddy.imageUrl);
     newPic.setAttribute("alt", "image camera");
     newPic.className = "d-block m-auto w-100 rounded";
+    // console.log(newPic.src);
 }
+
+
+// Fonction insertion Nom ours en peluche//
+
 function insertName(description, teddy) {
     const nameTeddy = document.createElement("h3");
     description.appendChild(nameTeddy);
     nameTeddy.innerHTML = teddy.name;
     nameTeddy.className = "text-btn-color font-weight-bold";
+    // console.log(nameTeddy.innerHTML);
 }
+
+
+// Fonction insertion ID ours en peluche//
+
 function insertId(description, teddy) {
     const divId = document.createElement("div");
     description.appendChild(divId);
@@ -56,7 +69,12 @@ function insertId(description, teddy) {
     divId.appendChild(paragraphId);
     paragraphId.innerHTML = teddy._id;
     paragraphId.className = "text-primary";
+    // console.log(paragraphId.innerHTML);
 }
+
+
+// Fonction insertion Couleur ours en peluche//
+
 function insertColor(description, teddyColors) {
     const divColor = document.createElement("div");
     description.appendChild(divColor);
@@ -75,14 +93,23 @@ function insertColor(description, teddyColors) {
         secondOption.setAttribute("value", teddyColors[i]);
         secondOption.setAttribute("required", "");
         secondOption.innerHTML = teddyColors[i];
+        // console.log(secondOption.value);
     }
 }
+
+// Fonction insertion description ours en peluche//
+
 function insertDescription(description, teddy) {
     const paragraphDescription = document.createElement("p");
     description.appendChild(paragraphDescription);
     paragraphDescription.innerHTML = teddy.description;
     paragraphDescription.className = "text-primary font-weight-bold";
+    // console.log(paragraphDescription.innerHTML);
 }
+
+
+// Fonction insertion Boutton "ajout panier" ours en peluche//
+
 function insertButtonCart(section, teddy) {
     const divRate = document.createElement("div");
     section.appendChild(divRate);
