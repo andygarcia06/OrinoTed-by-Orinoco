@@ -321,7 +321,7 @@ function addForm() {
     divErreurBtn.className = "w-100 h-100 bg-secondary py-2 mt-2";
     divErreurBtn.innerHTML = "";
 
-        
+    
         btnConfirmOrder.addEventListener("click", function(e){
         if(inputFirstName.value === "" || inputName.value === "" || inputAddress.value === "" || inputCity.value === "" || inputEmail.value ==="" ) {
             return (divErreurBtn.innerHTML = "Veuillez remplir toutes les informations obligatoires.")&&(divErreurBtn.className = "text-danger font-weight-bold pt-3")&&(inputsForm.className = "border border-danger");
@@ -330,6 +330,7 @@ function addForm() {
         }else if(isValid(inputFirstName.value)=== false || isValid(inputName.value) === false || validateZipCode(inputAddress.value) === false || isValid(inputCity.value)=== false || validateEmail(inputEmail.value)=== false ){
            return(btnConfirmOrder.className = "btn btn-danger w-25 font-weight-bold")&&(divErreurBtn.innerHTML = "Veuillez remplir vos informations correctement.")&&(divErreurBtn.className = "text-danger font-weight-bold pt-3");
         }else{ 
+
             let contact = {
                 firstName: inputFirstName.value,
                 lastName: inputName.value,

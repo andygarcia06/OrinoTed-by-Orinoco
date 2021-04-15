@@ -7,6 +7,8 @@ const url = "http://localhost:3000/api/teddies";
 
 /*----- Fonctions -----*/
 
+// Fonction insertion image ours en peluche//
+
 function insertImageUrl(section, image){ 
     const newFigure = document.createElement("figure");
     section.appendChild(newFigure);
@@ -15,14 +17,20 @@ function insertImageUrl(section, image){
     newImg.setAttribute("src", image);
     newImg.setAttribute("alt", "image camera");
     newImg.className = "d-block m-auto w-100 rounded";
+    // console.log(newImg); 
  }
+
+ // Fonction insertion Nom ours en peluche//
 
 function insertName(div, name){
     const newH3 = document.createElement("h3");
     div.appendChild(newH3);
     newH3.innerHTML = name;
     newH3.className = "text-btn-color card-title font-weight-bold";
+    // console.log(newH3.innerHTML);
 }
+
+// Fonction insertion ID ours en peluche//
 
 function insertId(div, id){
     const newDiv2 = document.createElement("div");
@@ -37,7 +45,10 @@ function insertId(div, id){
     newDiv2.appendChild(newP2);
     newP2.innerHTML = id;
     newP2.className = "text-primary font-weight-bold";
+    // console.log(newP2.innerHTML);
 }
+
+// Fonction insertion Couleur ours en peluche//
 
 function insertColor(div){
     const newP3 = document.createElement("p");
@@ -47,12 +58,18 @@ function insertColor(div){
     newP3.appendChild(newSpan2);
     newSpan2.innerHTML = "Couleur : Personnalisable";
 }
+
+// Fonction insertion Description ours en peluche//
+
 function insertDescription(div, description){
     const newP4 = document.createElement("p");
     div.appendChild(newP4);
     newP4.innerHTML = description;
     newP4.className = "text-primary";
 }
+
+// Fonction insertion Prix ours en peluche//
+
 function insertPrice(div3, price){
     const newDiv4 = document.createElement("div");
     div3.appendChild(newDiv4);
@@ -60,7 +77,11 @@ function insertPrice(div3, price){
     newDiv4.appendChild(newP5);
     newP5.innerHTML = "Prix du nounours : " + price;
     newP5.className = "font-weight-bold text-btn-color";
+    // console.log(newP5.innerHTML);
 }
+
+// Fonction insertion Lien ours en peluche//
+
 function insertLienPerso(div3, idLien){
     const newDiv5 = document.createElement("div");
     div3.appendChild(newDiv5);
@@ -74,6 +95,8 @@ function insertLienPerso(div3, idLien){
     newA.setAttribute("href", "./produit.html?id=" + idLien);
     newA.innerHTML = "Modifiez votre Ourson !";
 }
+
+// Fonction problème serveur ours en peluche//
 
 function serverOut() {
     const myH1 = document.getElementById("my_title");
