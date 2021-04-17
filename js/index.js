@@ -85,15 +85,20 @@ function insertPrice(div3, price){
 function insertLienPerso(div3, idLien){
     const newDiv5 = document.createElement("div");
     div3.appendChild(newDiv5);
+    // console.log("ajout div du btn");
     const newP6 = document.createElement("p");
+    // console.log("ajout du p btn");
     newDiv5.appendChild(newP6);
     const newButton = document.createElement("button");
+    // console.log("ajout du btn");
     newP6.appendChild(newButton);
     const newA = document.createElement("a");
     newButton.appendChild(newA);
     newButton.className = "btn btn-btn-color d-block"
     newA.setAttribute("href", "./produit.html?id=" + idLien);
     newA.innerHTML = "Modifiez votre Ourson !";
+    // console.log("ajout de modifier votre ourson");
+    
 }
 
 // Fonction problème serveur ours en peluche//
@@ -106,13 +111,15 @@ function serverOut() {
     const divServerOut = document.createElement("div");
     catalogue.appendChild(divServerOut);
     divServerOut.innerHTML = "Nous rencontrons actuellement un léger problème, nous revenons très vite !!!";
-    divServerOut.className = "m-auto font-weight-bold text-center"
+    divServerOut.className = "m-auto font-weight-bold text-center";
+    // console.log("Problème serveur");
 }
 
 function promiseGet() {
     return new Promise((resolve, reject) => {
         let recupHttp = new XMLHttpRequest();
         recupHttp.open('GET', 'http://localhost:3000/api/teddies');
+        recupHttp.responseType = "";
         recupHttp.send();
         recupHttp.onreadystatechange = function() {
             if(this.readyState === XMLHttpRequest.DONE) {

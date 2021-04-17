@@ -24,6 +24,7 @@ const cartEmpty = function() {
         myForm.appendChild(divEmpty);
         divEmpty.innerHTML = "Votre Panier est vide !";
         divEmpty.className = "text-center font-weight-bold mb-3 text-danger w-100";
+        alert("votre panier est vide");
     }
 }
 /*------ fonction pour alimenter le tableau de commande -----*/
