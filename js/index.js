@@ -17,7 +17,7 @@ function insertImageUrl(section, image){
     newImg.setAttribute("src", image);
     newImg.setAttribute("alt", "image camera");
     newImg.className = "d-block m-auto w-100 rounded";
-    // console.log(newImg.src); 
+    console.log(newImg.src);
  }
 
  // Fonction insertion Nom ours en peluche//
