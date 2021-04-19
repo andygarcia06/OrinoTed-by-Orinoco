@@ -14,7 +14,7 @@ function promiseGet() {
         let recoverHttp = new XMLHttpRequest();
         recoverHttp.open("GET", urlGet+ idUrl);
         recoverHttp.send();
-        recoverHttp.onreadystatechange = function() {
+        recoverHttp.onload = function() {
             if(this.readyState === XMLHttpRequest.DONE) {
                 if(this.status === 200) {
                     resolve(JSON.parse(this.responseText));

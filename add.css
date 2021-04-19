@@ -86,6 +86,19 @@ h5 + p {
         .hidden {
             font-size: 0.1px;
         }
+
+        .textThanks{
+            font-size : 8px;
+        }
+    
+        .textThanks2{
+            font-size:8px
+        }
+
+        .textTitleThanks{
+            font-size:16px
+        }
+     
      }
 
 @media only screen and (min-device-width : 768px) and (max-device-width : 1024px) and (orientation : portrait) {
@@ -109,6 +122,18 @@ h5 + p {
     h3 {
         font-size: 24px;
         margin-bottom:10px;
+    }
+
+    .textThanks{
+        font-size : 12px;
+    }
+
+    .textThanks2{
+        font-size:12px
+    }
+
+    .textTitleThanks{
+        font-size:20px
     }
  
      }

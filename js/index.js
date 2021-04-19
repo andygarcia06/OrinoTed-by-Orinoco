@@ -121,12 +121,15 @@ function promiseGet() {
         recupHttp.open('GET', 'http://localhost:3000/api/teddies');
         recupHttp.responseType = "";
         recupHttp.send();
-        recupHttp.onreadystatechange = function() {
+        recupHttp.onload = function() {
             if(this.readyState === XMLHttpRequest.DONE) {
                 if(this.status === 200) {
                     resolve(JSON.parse(this.responseText));
+                    console.log(JSON.parse(this.responseText));
+
                 }else{
                     reject(recupHttp);
+                    console.log(recupHttp);
                 }
             }
         }

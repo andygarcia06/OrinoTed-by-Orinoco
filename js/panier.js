@@ -386,7 +386,7 @@ function sendPost(url, toSend){
         recovHttp.open("POST", url);
         recovHttp.setRequestHeader("content-type", "application/json");
         recovHttp.send(JSON.stringify(toSend));
-        recovHttp.onreadystatechange = function() {
+        recovHttp.onload = function() {
             if(this.readyState === XMLHttpRequest.DONE) {
                 if(this.status >= 200 && this.status <= 300) {  
                     resolve(JSON.parse(this.responseText));

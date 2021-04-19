@@ -31,29 +31,29 @@ function orderPage() {
     thanks1.className = "row";
     const firstPartOrder = document.getElementById("premiere_partie");
     firstPartOrder.innerHTML = "Nous vous remercions de votre achat, pour un total de : " ;
-    firstPartOrder.className = " col-6 font-weight-bold"
+    firstPartOrder.className = " col-6 font-weight-bold textThanks"
     const priceCart = document.getElementById('prix_achat');
     priceCart.innerHTML =  calculPrice + "€";
-    priceCart.className = " col-6 font-weight-bold text-btn-color";
+    priceCart.className = " col-6 font-weight-bold text-btn-color textThanks2";
     // console.log(priceCart.calculPrice);
 
 
     const thanks2 = document.getElementById("thanks2");
     thanks2.className = "row";
     const orderForId1 = document.getElementById("order_id1");
-    orderForId1.className = "col-6 font-weight-bold"
+    orderForId1.className = "col-6 font-weight-bold textThanks"
     orderForId1.innerHTML = "Voici une information qui vous sera utile, votre numéro de commande est le : " ;
     const orderForId2 = document.getElementById("order_id2");
     orderForId2.innerHTML = idUrl;
-    orderForId2.className = "col-6 text-btn-color font-weight-bold";
+    orderForId2.className = "col-6 text-btn-color font-weight-bold textThanks2";
     // console.log(orderForId2.idUrl);
 
     const remerciementFinal = document.getElementById("remerciements");
     remerciementFinal.innerHTML = "Gardez le. Il vous sera utile, lors d'éventuels échanges entre nous, ou pour traquer la livraison ! "
-    remerciementFinal.className = "font-weight-bold";
+    remerciementFinal.className = "font-weight-bold textThanks";
     const remerciementFinal2 = document.getElementById("remerciement2");
     remerciementFinal2.innerHTML = "Toute l'équipe d'OrinoTed vous remercie ! A très vite !"
-    remerciementFinal2.className = "font-weight-bold";
+    remerciementFinal2.className = "font-weight-bold textThanks";
     
 
     const divButtonThanks = document.getElementById("button_thanks");
